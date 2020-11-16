@@ -39,8 +39,10 @@ public class LoginServlet extends HttpServlet {
         
         if (user.getRole().getRoleId() == 1) {
             response.sendRedirect("admin");
+            session.setAttribute("isAdmin", true);
         } else {
             response.sendRedirect("notes");
+            session.setAttribute("isAdmin", false);
         }
     }
 }
